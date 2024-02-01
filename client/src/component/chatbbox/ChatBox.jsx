@@ -32,7 +32,7 @@ function ChatBox({template , show}) {
   const applyStyles = ()=>{
     const style = url
     ? {
-        backgroundImage: `url(../../../../../server/background-images/${url})`,
+        backgroundImage: `url(../../../public/background-images/${url})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
@@ -52,7 +52,7 @@ function ChatBox({template , show}) {
           style={{textAlign:image_align}}
           >  
             <img 
-                src={`../../../../../server/gallery-image/${chat_image}`}
+                src={`../../../public/gallery-image/${chat_image}`}
                 width={image_width} 
                 height={image_height}
                 className='img_chat'

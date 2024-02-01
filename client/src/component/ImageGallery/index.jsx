@@ -12,7 +12,7 @@ const ImageGallery =({handleImageDrop})=> {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('../../../server/gallery.json');
+      const response = await fetch('../../../public/gallery.json');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
@@ -40,7 +40,7 @@ const ImageGallery =({handleImageDrop})=> {
           <div key={index} draggable 
           >
              <div className="image-card">
-              <img src={`../../../server/gallery-image/${image.url}`} className="image-card-img" />
+              <img src={`../../../public/gallery-image/${image.url}`} className="image-card-img" />
              </div>
           </div>
         ))}

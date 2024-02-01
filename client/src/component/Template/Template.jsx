@@ -13,7 +13,7 @@ const Template = ()=>{
 
   const fetchData = async () => {
     try {
-      const response = await fetch('../../../server/data.json');
+      const response = await fetch('../../../public/data.json');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
@@ -52,7 +52,7 @@ const TemplateCard = ({data:template}) =>{
      <>
       { template && <div className="card">
         {template.url ?<img 
-          src={`../../../../../server/background-images/${template.url}`}
+          src={`../../../public/background-images/${template.url}`}
            className="card__img"
            />
           : <div className="card__img" style={{background : template.background_color}}></div>

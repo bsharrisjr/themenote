@@ -3,6 +3,7 @@ import { Routes,Route } from 'react-router-dom';
 
 import Form from "./component/Form";
 import Template from "./component/Template/Template";
+import "./App.css"
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
      <>
       <Routes>
         <Route path='/' element={<Template />}/>
-        <Route path='/new' element={<Form />}/>
+        <Route path='/new/:id' element={<Form />}/>
       </Routes>
   
      </>

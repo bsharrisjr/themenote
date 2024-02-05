@@ -2,6 +2,9 @@
 import React,{useState, useEffect} from "react";
 import './style.css'
 
+function d(){
+
+}
 const ImageGallery =({data,callBack})=> {
   const [images, setImages] = useState()
  useEffect(() => {

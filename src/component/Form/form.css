@@ -13,13 +13,14 @@
 }
 .color-pallate-label{
   font-size: large;
-  margin-right: 10px;
+  color: rgb(1, 0, 0);
 
 }
 .color-pallate{
   display: flex;
-text-align: center;
-background: white;
+  justify-content: end;
+  align-items: end;
+  background-color: white;
 width:213px;
 }
 
@@ -53,13 +54,12 @@ width:213px;
 }
 
 .template__image{
-
-  margin: auto;
-   width: 300px;
-   min-height: 300px;
+   width: 304px;
+   height: 304px;
+   max-height: 304px;
    border: 2px dotted black;
-   text-align: center;
-  background: white;
+   background-color: white;
+
 }
 .template__form{
   margin-top: 10px;
@@ -68,7 +68,6 @@ width:213px;
 }
 .form-fieldset{
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -76,11 +75,7 @@ width:213px;
   width: 100vw;
   padding: 10px;
 }
-.nav-btn{
-  margin: 5px;
-  background-color: rgb(23, 48, 161);
-  color: white;
-}
+
 
 @media screen and (min-width: 600px) {
  .display-container{
@@ -102,6 +97,5 @@ width:213px;
 
 .color-pallate{
   display: flex;
-  margin-left: 110px;
 }
 }

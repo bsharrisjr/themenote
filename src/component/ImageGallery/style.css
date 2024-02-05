@@ -4,6 +4,7 @@
   display: grid;
   gap: 1rem;
    grid-template-columns: repeat(auto-fit, minmax(10rem, 10rem));
+   margin: 10px;
 }
 
 .image-card {

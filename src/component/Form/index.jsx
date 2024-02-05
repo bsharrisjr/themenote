@@ -2,6 +2,7 @@
 import React, {useState,useEffect} from "react";
 import {NavLink} from 'react-router-dom';
 import ImageGallery from '../ImageGallery'
+import { useParams } from 'react-router-dom';
 
 import './form.css'
 
@@ -9,13 +10,16 @@ function Form() {
    const [formData, setFormData] = useState({});
    const [images, setImages] = useState([])
    const [background, setBackground] = useState([])
-   
+    const [data, setData] = useState({});
    const [selectedBackground,setSelectedBackground] = useState()
    const [selectedImage,setSelectedImage] = useState()
+      const { id } = useParams();
 
     useEffect(() => {
       fetchData();
+      fetchTemplate(id)
     }, []);
+
 
   const fetchData = async () => {
 
@@ -42,6 +46,19 @@ function Form() {
       console.error('Error fetching data:', error);
     }
   };
+   const fetchTemplate = async (id) => {
+      try {
+        const response = await fetch('../data.json');
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        const jsonData = await response.json();
+        const filteredData = jsonData.filter(item => item.id === id);
+        setData(filteredData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+  };
 
   const handleChange = (e) => {
     let { name, value } = e.target;
@@ -62,7 +79,26 @@ function Form() {
       }:{ background : formData?.color}
       return style
   }
+  const applyImageStyles = ()=>{
+    
+    const style =  data[0]?.image_align &&
+       {display: 'flex',
+        justifyContent : `${data[0]?.image_align }`
+      }
 
+      return style
+  }
+
+   const applyFormStyles = ()=>{
+    
+    const style =  data[0]?.subject_align &&
+       {display: 'flex',
+        justifyContent : `${data[0]?.subject_align }`
+      }
+
+      return style
+  }
+  
   const applySubjectStyles = ()=>{
     let style = {
       'backgroundColor':'transparent'
@@ -109,12 +145,13 @@ function Form() {
     <div className="display-container">
       <div className="form-container" style={applyBackground()}>
       <NavLink to="/"><button className="nav-btn">Back</button></NavLink>;
-
-         <div  className='template__image'>
+         <div style={applyImageStyles()}>
+          <div  className='template__image' >
             {selectedImage ?<img src={`${selectedImage.path}/${selectedImage.url}`}  width={300} height={300} />:"Select an image"}
         </div>
-        <div className="template__form">
-         <div className="form-fieldset">
+         </div>
+        <div className="template__form" >
+         <div className="form-fieldset" style={applyFormStyles()}>
            <input 
             type="text" 
             placeholder="Add Subject"
@@ -142,7 +179,7 @@ function Form() {
         className="form-group-number"
           />
          </div>
-          <div className="form-fieldset">
+          <div className="form-fieldset" style={applyFormStyles()}>
              <textarea
             name="message"
             type="text"  
@@ -172,6 +209,7 @@ function Form() {
           </div>
          
          <div className="color-pallate">
+          
            <label 
             htmlFor="color" 
             className="color-pallate-label"

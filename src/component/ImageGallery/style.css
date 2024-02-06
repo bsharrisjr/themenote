@@ -1,0 +1,21 @@
+
+
+.image-wrapper {
+  display: grid;
+  gap: 1rem;
+   grid-template-columns: repeat(auto-fit, minmax(10rem, 10rem));
+   margin: 10px;
+}
+
+.image-card {
+  box-shadow: 0 0 10px 5px #e1e5ee;
+  border-radius: 0.2rem;
+   max-width: 10rem;
+   cursor: pointer;
+}
+.image-card-img{
+  width: 10rem;
+  height: 10rem;
+}
+
+

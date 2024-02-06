@@ -1,0 +1,39 @@
+[
+  {
+    "id":"1",
+    "url":"../organization1/background/background1.avif",
+    "name":"Template 1",
+    "background_color":"",
+    "image_align":"top",
+    "subject_align":"end"
+  },
+  {
+    "id":"2",
+    "url":"../organization1/background/2.avif",
+    "name":"Template 2",
+    "background_color":"",
+    "image_align":"center",
+    "subject_align":"center"
+  
+  },
+    {
+      "id":"3",
+      "name":"Template 3",
+      "background_color":"blue",
+      "image_width":"",
+      "image_height":"",
+      "url":"../organization1/background/3.avif",
+      "image_align":"end",
+      "subject_align":"top"
+
+      },
+      {
+      "id":"4",
+      "name":"Template 4",
+      "background_color":"pink",
+      "url":"../organization1/background/background1.avif",
+      "image_align":"center",
+      "subject_align":"center"
+
+      }
+    ]

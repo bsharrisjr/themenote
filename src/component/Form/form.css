@@ -1,0 +1,101 @@
+.display-container{
+  display: block;
+}
+
+.form-container{
+  width: 100vw;
+  padding: 10px;
+  overflow-y: auto; 
+}
+
+.form-group{
+  margin: 10px;
+}
+.color-pallate-label{
+  font-size: large;
+  color: rgb(1, 0, 0);
+
+}
+.color-pallate{
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  background-color: white;
+width:213px;
+}
+
+.form-group-text {
+    margin-bottom: 10px;
+    width: 50%;
+    height: 40px;
+    font-size: 20px;
+    margin-right: 5px;
+}
+.form-group-number {
+    margin-bottom: 10px;
+    width: 10%;
+    height: 40px;
+    font-size: large;
+    margin-left: 5px;
+}
+.form-group-pallete {
+    margin-bottom: 10px;
+    width: 10%;
+    height: 40px;
+    font-size: large;
+}
+.form-group-textarea {
+    margin-bottom: 10px;
+    width: 50%;
+    height: 80px;
+    font-size: 20px;
+    background-color: 'transparent';
+    margin-right: 5px;
+}
+
+.template__image{
+   width: 304px;
+   height: 304px;
+   max-height: 304px;
+   border: 2px dotted black;
+   background-color: white;
+
+}
+.template__form{
+  margin-top: 10px;
+  text-align: center;
+ 
+}
+.form-fieldset{
+  display: flex;
+  align-items: center;
+}
+
+.gallery-container{
+  width: 100vw;
+  padding: 10px;
+}
+
+
+@media screen and (min-width: 600px) {
+ .display-container{
+  display: flex;
+}
+.form-container{
+  width: 58vw;
+   max-height: 100vh; 
+  border-right: 2px solid rgb(0, 0, 0);
+  overflow-y: auto; 
+}
+.gallery-container{
+  width: 42vw;
+  padding: 10px;
+   max-height: 100vh; 
+  overflow-y: auto; 
+
+}
+
+.color-pallate{
+  display: flex;
+}
+}
